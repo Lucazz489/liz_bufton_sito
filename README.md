@@ -1,79 +1,77 @@
-# Sito Liz Bufton
+# Liz Bufton – Coaching Website
 
-Next.js (App Router) + TypeScript + Tailwind, export statico per Cloudflare Pages.
+Website for **Liz Bufton**, a coach and English teacher who works with professional women going through career progression, greater responsibility and change of direction.
 
-## Avvio
+Designed and developed by me, from the visual identity to the deploy.
+
+🔗 **Live site:** *coming soon*
+
+> Status: **work in progress** – the structure and design are complete; final photos, copy and domain are being added.
+
+---
+
+## Highlights
+
+- **Static site, no backend** – Next.js static export served from Cloudflare's edge: fast, cheap to host, nothing to maintain on the server side.
+- **Booking form without a server** – requests are sent through Web3Forms straight to the client's inbox, with a honeypot field against spam and an explicit privacy consent checkbox.
+- **GDPR-friendly by design** – fonts are self-hosted with `@fontsource`, so the site makes no calls to Google Fonts; no tracking scripts.
+- **Custom illustration in code** – the walking-woman drawing from the client's journal cover is vectorized and rendered as an inline SVG component that inherits the text colour.
+- **Role-based colour system** – every colour lives in one place (`app/globals.css`); components use semantic roles (`page`, `band`, `head`, `btn`…) instead of hard-coded colours, so the palette can change without touching components.
+- **Content kept separate from layout** – site data, menu and testimonials live in `lib/`, so texts can be updated without editing components.
+- **Image placeholders** – an `ImageSlot` component shows a description of the photo still needed, so the site is publishable while assets are still being produced.
+- **Accessibility** – animations respect *prefers-reduced-motion*, semantic HTML, labelled form fields.
+- **SEO** – page metadata and Open Graph tags, generated `sitemap.xml` and `robots.txt`.
+- **Responsive** – mobile-first layout with a dedicated mobile menu.
+
+## Pages
+
+| Page | Content |
+|---|---|
+| Home | Overview of coaching, programme, journaling, tools and testimonials |
+| My Story | About Liz |
+| Programme | The coaching programme in detail |
+| Growth and insights | Articles and resources |
+| Book a Complimentary Call | Booking form |
+| Privacy | Privacy policy |
+
+## Tech stack
+
+- **Framework:** Next.js (App Router, static export) · React · TypeScript
+- **Styling:** Tailwind CSS v4 · custom CSS design tokens
+- **Fonts:** Cormorant Garamond + Figtree, self-hosted via `@fontsource`
+- **Forms:** Web3Forms
+- **Hosting:** Cloudflare (static assets, deployed with Wrangler)
+
+## Project structure
+
+```
+app/                    Pages (App Router), global styles, sitemap and robots
+components/             Reusable UI: Header, Footer, Band, Split, Divider, ImageSlot…
+components/sections/    Page sections: Hero, CoachingIntro, Testimonials, ThreeElements…
+components/artwork.ts   Vectorized illustration paths
+lib/site.ts             Site name, URLs, menu
+lib/testimonials.ts     Testimonials content
+public/images/          Photos
+```
+
+## Running locally
 
 ```bash
 npm install
-cp .env.example .env.local   # poi incolla la chiave Web3Forms
-npm run dev                  # http://localhost:3000
-npm run build                # genera la cartella out/
+npm run dev        # http://localhost:3000
+npm run build      # static export in out/
 ```
 
-## Struttura
+The booking form needs a Web3Forms key in `.env.local`:
 
 ```
-app/
-  page.tsx              Home (anteprime di tutte le sezioni)
-  about/                About
-  the-programme/        The Programme
-  book-a-call/          Book a Complimentary Call (form)
-  privacy/              Privacy Policy (testo da inserire)
-  sitemap.ts, robots.ts SEO
-components/
-  Header.tsx            Menu (desktop + mobile), voce attiva sottolineata
-  LineWalk.tsx          Linea animata (al momento non usata)
-  BookingForm.tsx       Form con Web3Forms, honeypot e consenso privacy
-  sections/             Blocchi delle pagine (Hero, CoachingIntro, Journaling...)
-lib/site.ts             Nome, dominio, email, voci di menu
-app/globals.css         Palette e font (blocco @theme), animazioni
+NEXT_PUBLIC_WEB3FORMS_KEY=your-key
 ```
 
-## Da completare
+## Deploy
 
-- [ ] Foto: `public/images/liz-hero.jpg` e `coaching-journal.jpg` sono ritagli provvisori dal Canva, sostituirli con gli originali in alta risoluzione (stesso nome file)
-- [ ] Logo: per ora il nome e' scritto in Cormorant Garamond (`components/Header.tsx`)
-- [ ] Testi: tutti quelli in italiano sono indicazioni da sostituire
-- [ ] `lib/site.ts`: dominio definitivo, email, Instagram
-- [ ] Chiave Web3Forms in `.env.local` e nelle variabili di Cloudflare
-- [ ] Testo della Privacy Policy
-- [ ] Immagine Open Graph `public/og.jpg` (1200x630), poi scommentare in `app/layout.tsx`
+`npm run build` generates the static site in `out/`, which is published on Cloudflare with Wrangler (configuration in `wrangler.jsonc`). The Web3Forms key is set as an environment variable in the Cloudflare dashboard.
 
-## Linea animata
+---
 
-`components/LineWalk.tsx` disegna una linea rosa mentre si scorre: parte da un
-groviglio, diventa una donna che cammina e prosegue in avanti (ispirata alla
-copertina del Coaching Journal). I percorsi sono in `components/linewalk-paths.ts`.
-Con "riduci animazioni" attivo nel sistema operativo, appare gia' completa.
-Per una versione disegnata da un illustratore basta sostituire i path SVG.
-
-## Colori
-
-Tutti i colori sono in un solo punto: il blocco `:root` in `app/globals.css`.
-I componenti non usano mai colori diretti, ma "ruoli":
-
-| Ruolo | Dove si usa | Colore |
-|---|---|---|
-| `page`, `fg`, `muted`, `label` | sfondo, testo, testo secondario, etichette e corsivi | avorio, quasi nero, grigio caldo, cipria scuro |
-| `alt`, `alt-fg`, `alt-muted`, `alt-label` | sezioni alternate (Journal, About) | rosa tenue |
-| `band`, `band-fg` | fasce con la frase in evidenza | nero con testo avorio |
-| `head`, `head-fg` | navbar e footer | cipria con testo bianco |
-| `btn`, `btn-fg`, `btn-hover` | l'unico pulsante del sito (classe `.cta`) | cipria con testo nero |
-
-## Componenti di stile
-
-- Pulsante: classe `.cta` (uguale ovunque). Link secondario: classe `.text-link`
-- Due colonne titolo/testo: componente `Split`
-- Fascia con frase in evidenza: componente `Band`
-- Divisore con i due riccioli: componente `Divider`
-
-## Pubblicazione su Cloudflare Pages
-
-1. Caricare il progetto su GitHub.
-2. Cloudflare > Workers & Pages > Create > Pages > collega il repository.
-3. Build command: `npm run build`. Output directory: `out`.
-4. Variabile d'ambiente: `NEXT_PUBLIC_WEB3FORMS_KEY`.
-5. Dopo il deploy: collegare il dominio e inviare `/sitemap.xml` a Google Search Console.
-
-I font sono installati nel progetto (`@fontsource`), quindi il sito non chiama Google Fonts.
+*Photos, illustration, texts and testimonials are the property of Liz Bufton and are shown here with her permission. They may not be reused.*
