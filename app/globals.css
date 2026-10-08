@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/*
+ * COLORI
+ * Tutti i componenti usano solo questi "ruoli" (mai colori diretti):
+ *   page / fg / muted / label  -> sfondo principale e testi
+ *   alt / alt-fg / alt-muted / alt-label -> sezioni alternate (Journal, About)
+ *   band / band-fg             -> fasce con la frase in evidenza
+ *   head / head-fg             -> navbar e footer
+ *   btn / btn-fg / btn-hover   -> l'UNICO stile di pulsante del sito
+ * Per ritoccare una tonalita' basta cambiarla qui sotto.
+ */
+@theme inline {
+  --color-page: var(--page);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-label: var(--label);
+  --color-alt: var(--alt);
+  --color-alt-fg: var(--alt-fg);
+  --color-alt-muted: var(--alt-muted);
+  --color-alt-label: var(--alt-label);
+  --color-band: var(--band);
+  --color-band-fg: var(--band-fg);
+  --color-head: var(--head);
+  --color-head-fg: var(--head-fg);
+  --color-btn: var(--btn);
+  --color-btn-fg: var(--btn-fg);
+  --color-gold: var(--gold);
+
+  --font-serif: "Cormorant Garamond Variable", "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-sans: "Figtree Variable", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Palette definitiva: avorio, cipria e nero */
+:root {
+  --page: #f6f0ec;
+  /* avorio */
+  --fg: #1a1416;
+  /* quasi nero */
+  --muted: #5e5254;
+  --label: #8a4b54;
+  /* cipria scuro per etichette e corsivi, leggibile sull'avorio */
+
+  --alt: #ede0db;
+  /* rosa tenue per le sezioni alternate */
+  --alt-fg: #1a1416;
+  --alt-muted: #54494b;
+  --alt-label: #8a4b54;
+
+  --band: #d3a1a5;
+  /* fasce: rosa medio, a meta' tra il rosa tenue e il cipria, con testo quasi nero */
+  --band-fg: #1a1416;
+
+  --head: #bc747e;
+  /* navbar e footer cipria con testo bianco */
+  --head-fg: #ffffff;
+
+  --btn: #bc747e;
+  /* pulsanti cipria con testo nero */
+  --btn-fg: #ffffff;
+  --btn-hover: #c98a92;
+
+  --gold: #9c7a3c;
+  /* oro antico: solo per testi grandi (frasi in corsivo, numeri) e linee decorative */
+}
+
+/* Lo sfondo "esterno" ha il colore della navbar: tirando la pagina oltre il bordo
+   (effetto elastico su Mac/iPhone) sopra la navbar e sotto il footer non compare mai un altro colore. */
+html {
+  scroll-behavior: smooth;
+  background: var(--head);
+  overscroll-behavior-y: none;
+}
+
+body {
+  background: var(--page);
+  color: var(--fg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection {
+  background: var(--label);
+  color: var(--page);
+}
+
+:focus-visible {
+  outline: 2px solid var(--label);
+  outline-offset: 4px;
+}
+
+@layer components {
+
+  /* L'unico pulsante del sito: stesso aspetto ovunque */
+  .cta {
+    display: inline-block;
+    background: var(--btn);
+    color: var(--btn-fg);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 1.05rem 1.9rem;
+    border-radius: 2px;
+    text-align: center;
+    transition: background-color 0.25s ease;
+  }
+
+  .cta:hover {
+    background: var(--btn-hover);
+  }
+
+  /* Link secondario (testo sottolineato), usato accanto al pulsante */
+  .text-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+  }
+
+  .text-link:hover {
+    color: var(--label);
+  }
+
+  .field {
+    width: 100%;
+    background: transparent;
+    color: var(--fg);
+    border: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
+    padding: 0.7rem 0;
+    font-size: 1.0625rem;
+    border-radius: 0;
+  }
+
+  .field:focus {
+    outline: none;
+    border-bottom-color: var(--label);
+  }
+
+  select.field option {
+    background: var(--page);
+    color: var(--fg);
+  }
+
+  /* Etichetta piccola in maiuscolo sopra i titoli */
+  .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}
+
+/* Disegno della copertina (componente LineWalk): forme piene, si scopre da sinistra a destra */
+.linewalk .caption {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.linewalk.is-done .caption {
+  opacity: 1;
+  transform: none;
+}
+
+/* Percorso delle sei settimane (componente Journey) */
+/* cerchi: chiari all'inizio, sempre piu' intensi tappa dopo tappa quando vengono raggiunti */
+.journey-halo { background: color-mix(in srgb, var(--btn) 8%, transparent); transform: translateX(-50%) scale(0.92); transition: background-color 0.8s ease, transform 0.8s cubic-bezier(.2,.8,.2,1); }
+.journey-stage.is-reached .journey-halo { background: color-mix(in srgb, var(--btn) calc(12% + var(--stage) * 4%), transparent); transform: translateX(-50%) scale(1); }
+.journey-num { color: color-mix(in srgb, var(--muted) 45%, transparent); transition: color 0.6s ease; }
+.journey-stage.is-reached .journey-num { color: var(--gold); }
+.journey-walker { will-change: transform, opacity; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    transition: none;
+  }
+
+  .linewalk .caption {
+    transition: none;
+  }
+  .journey-halo, .journey-num { transition: none; }
+}
