@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 
 // Colore della barra del browser su mobile, uguale alla navbar
 export const viewport: Viewport = {
-  themeColor: "#c2858c",
+  themeColor: "#f7f3ef",
   viewportFit: "cover",
 };
 

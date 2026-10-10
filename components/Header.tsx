@@ -18,15 +18,15 @@ export default function Header() {
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-head pt-[env(safe-area-inset-top)] text-head-fg">
+    <header className="sticky top-0 z-50 border-b border-rule bg-head/95 pt-[env(safe-area-inset-top)] text-head-fg backdrop-blur">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:h-24 lg:px-10">
         {/* TODO: sostituire con il logo quando e' pronto */}
-        <Link href="/" onClick={close} className="font-serif text-[1.75rem] leading-none font-semibold tracking-tight">
-          {SITE.name}
+        <Link href="/" onClick={close} className="leading-none">
+          <span className="block font-serif text-[1.85rem] font-medium tracking-[0.01em]">{SITE.name}</span>
         </Link>
 
         <button
-          className="p-2 text-base font-bold lg:hidden"
+          className="p-2 text-sm font-semibold tracking-[0.14em] uppercase lg:hidden"
           aria-expanded={open}
           aria-controls="main-nav"
           onClick={() => setOpen((o) => !o)}
@@ -36,7 +36,7 @@ export default function Header() {
 
         <nav
           id="main-nav"
-          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-20 flex-col items-start gap-1 bg-head px-6 pb-8 lg:static lg:flex lg:flex-row lg:items-center lg:gap-7 lg:p-0 xl:gap-10 2xl:gap-14`}
+          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-20 flex-col items-start gap-1 bg-head px-6 pb-8 lg:static lg:flex lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:p-0 xl:gap-10`}
         >
           {ITEMS.map((item) => (
             <Link
@@ -44,7 +44,7 @@ export default function Header() {
               href={item.href}
               onClick={close}
               aria-current={isActive(item.href) ? "page" : undefined}
-              className={`border-b-2 py-2.5 text-[1.3rem] leading-tight font-bold whitespace-nowrap transition-colors lg:py-1 lg:text-[1.05rem] xl:text-[1.2rem] 2xl:text-[1.3rem] ${
+              className={`border-b py-2.5 text-[1.05rem] leading-tight font-medium whitespace-nowrap transition-colors lg:py-1 lg:text-[0.9rem] xl:text-[0.95rem] ${
                 isActive(item.href) ? "border-head-fg" : "border-transparent hover:border-head-fg"
               }`}
             >

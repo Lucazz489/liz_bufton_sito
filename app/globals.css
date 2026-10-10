@@ -26,6 +26,7 @@
   --color-btn: var(--btn);
   --color-btn-fg: var(--btn-fg);
   --color-gold: var(--gold);
+  --color-rule: var(--rule);
 
   --font-serif: "Cormorant Garamond Variable", "Cormorant Garamond", Garamond, Georgia, serif;
   --font-sans: "Figtree Variable", "Helvetica Neue", Arial, sans-serif;
@@ -33,35 +34,40 @@
 
 /* Palette definitiva: avorio, cipria e nero */
 :root {
-  --page: #f6f0ec;
+  /* Palette sobria: avorio, quasi nero, rosa usato solo come accento */
+  --page: #f7f3ef;
   /* avorio */
-  --fg: #1a1416;
+  --fg: #1c1718;
   /* quasi nero */
-  --muted: #5e5254;
-  --label: #8a4b54;
-  /* cipria scuro per etichette e corsivi, leggibile sull'avorio */
+  --muted: #5f5557;
+  /* testo secondario */
+  --label: #9e5761;
+  /* rosa scuro: etichette, corsivi e accenti (leggibile sull'avorio) */
 
-  --alt: #ede0db;
+  --alt: #efe5e0;
   /* rosa tenue per le sezioni alternate */
-  --alt-fg: #1a1416;
-  --alt-muted: #54494b;
-  --alt-label: #8a4b54;
+  --alt-fg: #1c1718;
+  --alt-muted: #574d4f;
+  --alt-label: #8f4f58;
 
-  --band: #d3a1a5;
-  /* fasce: rosa medio, a meta' tra il rosa tenue e il cipria, con testo quasi nero */
-  --band-fg: #1a1416;
+  --band: #efe5e0;
+  /* fasce (pagine interne): rosa tenue con testo scuro */
+  --band-fg: #1c1718;
 
-  --head: #bc747e;
-  /* navbar e footer cipria con testo bianco */
-  --head-fg: #ffffff;
+  --head: #f7f3ef;
+  /* navbar: avorio come la pagina, testo scuro */
+  --head-fg: #1c1718;
 
-  --btn: #bc747e;
-  /* pulsanti cipria con testo nero */
+  --btn: #9e5761;
+  /* l'unico pulsante: rosa scuro con testo bianco */
   --btn-fg: #ffffff;
-  --btn-hover: #c98a92;
+  --btn-hover: #8a4b54;
 
   --gold: #9c7a3c;
-  /* oro antico: solo per testi grandi (frasi in corsivo, numeri) e linee decorative */
+  /* oro antico: solo dettagli (virgolette, numeri) */
+
+  --rule: rgb(28 23 24 / 0.12);
+  /* linee sottili di separazione */
 }
 
 /* Lo sfondo "esterno" ha il colore della navbar: tirando la pagina oltre il bordo
