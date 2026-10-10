@@ -1,5 +1,6 @@
 // Testimonianze.
 // FEATURED: quella in evidenza in home, tra "Coaching women to think clearly" e "The experience".
+// HIGHLIGHT: in nero subito dopo le credenziali.
 // OTHERS: tutte le altre, nella sezione "What clients say" in fondo alla home.
 export type Testimonial = { text: string[]; name: string; role: string };
 
@@ -12,6 +13,16 @@ export const FEATURED: Testimonial = {
   role: "Account Director, Accent Communication",
 };
 
+// In nero subito dopo le credenziali, in home
+export const HIGHLIGHT: Testimonial = {
+    text: [
+      "Liz is an extremely skilled coach who knows how to bring out the best in her clients. I particularly appreciate her approach of establishing clear, shared objectives at the beginning of the journey, as well as her ability to put people at ease during sessions.",
+      "She also has a remarkable ability to adapt each session to the specific needs of the moment.",
+    ],
+    name: "Marco Sala",
+    role: "Chief of Staff",
+  };
+
 export const OTHERS: Testimonial[] = [
   {
     text: [
@@ -20,14 +31,6 @@ export const OTHERS: Testimonial[] = [
     ],
     name: "Luca Chiodaroli",
     role: "Partner, PwC Italy \u00b7 AI & Digital Innovation",
-  },
-  {
-    text: [
-      "Liz is an extremely skilled coach who knows how to bring out the best in her clients. I particularly appreciate her approach of establishing clear, shared objectives at the beginning of the journey, as well as her ability to put people at ease during sessions.",
-      "She also has a remarkable ability to adapt each session to the specific needs of the moment.",
-    ],
-    name: "Marco Sala",
-    role: "Chief of Staff",
   },
   {
     text: [

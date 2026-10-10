@@ -1,6 +1,6 @@
 /** L'illustrazione ad acquerello del percorso, a tutta larghezza (statica per ora).
  *  Su mobile e' ingrandita e tagliata ai lati, cosi' la donna resta leggibile. */
-export default function JourneyArt() {
+export default function JourneyArt({ caption = "From overthinking to moving forward." }: { caption?: string | null }) {
   return (
     <section aria-label="From tangled thoughts to moving forward" className="overflow-hidden pb-10">
       <img
@@ -10,9 +10,9 @@ export default function JourneyArt() {
         height={533}
         className="relative left-1/2 w-[180%] max-w-none -translate-x-1/2 sm:w-full sm:max-w-[1600px]"
       />
-      <p className="mt-4 text-center font-serif text-[clamp(1.3rem,2vw,1.6rem)] text-label italic">
-        From overthinking to moving forward.
-      </p>
+      {caption && (
+        <p className="mt-4 text-center font-serif text-[clamp(1.3rem,2vw,1.6rem)] text-label italic">{caption}</p>
+      )}
     </section>
   );
 }

@@ -9,13 +9,11 @@ export default function HomeHero() {
   return (
     <section className="mx-auto grid max-w-7xl items-center gap-14 px-6 pt-14 pb-20 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:pt-20 lg:pb-28">
       <div className="lg:col-span-7">
-        <p className="text-[0.78rem] font-semibold tracking-[0.22em] text-label uppercase">
-          Coaching for professional women
-        </p>
-        <h1 className="mt-6 font-serif text-[clamp(3rem,6.4vw,5.6rem)] leading-[0.98] font-normal tracking-[-0.02em]">
-          Ready for what <em className="text-label">comes next?</em>
+        <h1 className="font-serif text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.95] font-normal tracking-[-0.02em]">
+          Coaching for <em className="text-label">professional women</em>
         </h1>
-        <p className="mt-8 max-w-[34ch] text-[1.2rem] leading-[1.6] text-muted lg:text-[1.3rem]">
+        <p className="mt-8 font-serif text-[clamp(1.6rem,2.4vw,2.1rem)] leading-tight italic">Ready for what comes next?</p>
+        <p className="mt-5 max-w-[36ch] text-[1.15rem] leading-[1.6] text-muted lg:text-[1.25rem]">
           A six-week coaching programme for women navigating progression, greater responsibility, change and new
           direction.
         </p>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Band from "@/components/Band";
 import ImageSlot from "@/components/ImageSlot";
-import LineWalk from "@/components/LineWalk";
+import JourneyArt from "@/components/home/JourneyArt";
 import { CTA } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
  * 3. testo centrato
  * 4. due colonne: testo a sinistra, foto a destra
  * 5. "Coaching, the brain & change" su sfondo alternato
- * 6. animazione della linea
+ * 6. illustrazione ad acquerello del percorso
  * 7. "Why women?" centrato, con il pulsante
  *
  * Le foto: salvarle in public/images/ e passare src="/images/…" ai componenti ImageSlot.
@@ -109,8 +109,10 @@ export default function MyStoryPage() {
         </div>
       </section>
 
-      {/* 6. Animazione */}
-      <LineWalk />
+      {/* 6. Illustrazione ad acquerello (la stessa della home) */}
+      <div className="pt-16 lg:pt-24">
+        <JourneyArt />
+      </div>
 
       {/* 7. Why women? */}
       <section className="mx-auto max-w-3xl px-6 pb-28 text-center lg:pb-40">
