@@ -1,4 +1,4 @@
-/** Breve presentazione del programma, centrata. Le qualifiche di Liz sono nella striscia sotto la prima schermata. */
+/** Breve presentazione del programma, centrata, con le due qualifiche di Liz. */
 export const CREDENTIALS = ["Neurolanguage Coach ICF accredited", "Corporate communication coach"];
 
 export function CredentialLine({ center = false }: { center?: boolean }) {
@@ -24,7 +24,8 @@ export default function Intro() {
         combination of individual support, reflection and practical learning to help build on strengths and develop
         their capabilities.
       </p>
-      <span aria-hidden="true" className="mx-auto mt-10 block h-px w-16 bg-gold" />
+      <span aria-hidden="true" className="mx-auto mt-10 mb-8 block h-px w-16 bg-gold" />
+      <CredentialLine center />
     </section>
   );
 }
