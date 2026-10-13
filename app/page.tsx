@@ -1,25 +1,34 @@
-import Hero from "@/components/sections/Hero";
-import CoachingIntro from "@/components/sections/CoachingIntro";
-import ProgrammeIntro from "@/components/sections/ProgrammeIntro";
-import ThreeElements from "@/components/sections/ThreeElements";
-import Journaling from "@/components/sections/Journaling";
-import Tools from "@/components/sections/Tools";
-import MeIntro from "@/components/sections/MeIntro";
-import Testimonials from "@/components/sections/Testimonials";
+import HomeHero from "@/components/home/HomeHero";
+import FeaturedQuote from "@/components/home/FeaturedQuote";
+import Intro from "@/components/home/Intro";
+import JourneyArt from "@/components/home/JourneyArt";
+import ProgrammeOverview from "@/components/home/ProgrammeOverview";
+import { AboutTeaser, WhyWomen, WhyProgramme } from "@/components/home/AboutLiz";
+import { Testimonials, ClosingCta } from "@/components/home/ClientWords";
+import { HIGHLIGHT } from "@/lib/testimonials";
 
-// Testimonianza di Luca dopo la sezione Coaching; le altre testimonianze (quando arrivano) in fondo alla home.
+/*
+ * Home secondo le note finali di Liz (ottobre):
+ * 1 prima schermata · 2 Mirella in nero · 3 presentazione + qualifiche · 4 Luca Chiodaroli in nero
+ * 5 acquerello · 6 il programma in sintesi · 7 A Little About Me · 8 Why women?
+ * 9 Why This Programme? · 10 testimonianze in nero · 11 invito finale
+ */
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <CoachingIntro />
+      <HomeHero />
+      <FeaturedQuote />
+      <Intro />
+      <FeaturedQuote q={HIGHLIGHT} />
+      <div className="pt-16 lg:pt-24">
+        <JourneyArt />
+      </div>
+      <ProgrammeOverview />
+      <AboutTeaser />
+      <WhyWomen />
+      <WhyProgramme />
       <Testimonials />
-      <ProgrammeIntro />
-      <ThreeElements />
-      <Journaling />
-      <Tools />
-      <MeIntro />
-      <Testimonials rest />
+      <ClosingCta />
     </>
   );
 }

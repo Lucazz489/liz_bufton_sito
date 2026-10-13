@@ -26,6 +26,8 @@
   --color-btn: var(--btn);
   --color-btn-fg: var(--btn-fg);
   --color-gold: var(--gold);
+  --color-sage: var(--sage);
+  --color-rule: var(--rule);
 
   --font-serif: "Cormorant Garamond Variable", "Cormorant Garamond", Garamond, Georgia, serif;
   --font-sans: "Figtree Variable", "Helvetica Neue", Arial, sans-serif;
@@ -33,35 +35,40 @@
 
 /* Palette definitiva: avorio, cipria e nero */
 :root {
-  --page: #f6f0ec;
-  /* avorio */
-  --fg: #1a1416;
-  /* quasi nero */
-  --muted: #5e5254;
-  --label: #8a4b54;
-  /* cipria scuro per etichette e corsivi, leggibile sull'avorio */
+  /* Palette "Rose & Sage" scelta da Liz: crema, espresso, rosa scuro, oro champagne, salvia */
+  --page: #f4eee9;
+  /* crema */
+  --fg: #302a2a;
+  /* espresso: testo e sezioni scure */
+  --muted: #6a6060;
+  /* testo secondario */
+  --label: #804557;
+  /* rosa scuro: etichette, bordi e pulsanti */
 
-  --alt: #ede0db;
-  /* rosa tenue per le sezioni alternate */
-  --alt-fg: #1a1416;
-  --alt-muted: #54494b;
-  --alt-label: #8a4b54;
+  --alt: #ebe1db;
+  /* crema rosata per le sezioni alternate */
+  --alt-fg: #302a2a;
+  --alt-muted: #625858;
+  --alt-label: #804557;
 
-  --band: #d3a1a5;
-  /* fasce: rosa medio, a meta' tra il rosa tenue e il cipria, con testo quasi nero */
-  --band-fg: #1a1416;
+  --band: #ebe1db;
+  --band-fg: #302a2a;
 
-  --head: #bc747e;
-  /* navbar e footer cipria con testo bianco */
-  --head-fg: #ffffff;
+  --head: #f4eee9;
+  /* navbar crema con filo rosa scuro */
+  --head-fg: #302a2a;
 
-  --btn: #bc747e;
-  /* pulsanti cipria con testo nero */
+  --btn: #804557;
+  /* pulsante: rosa scuro con testo bianco */
   --btn-fg: #ffffff;
-  --btn-hover: #c98a92;
+  --btn-hover: #6c3a49;
 
-  --gold: #9c7a3c;
-  /* oro antico: solo per testi grandi (frasi in corsivo, numeri) e linee decorative */
+  --gold: #c0a47e;
+  /* oro champagne: linee, numeri e testi sulle sezioni scure */
+  --sage: #a5b09a;
+  /* salvia: piccoli dettagli (icone) */
+
+  --rule: rgb(48 42 42 / 0.14);
 }
 
 /* Lo sfondo "esterno" ha il colore della navbar: tirando la pagina oltre il bordo

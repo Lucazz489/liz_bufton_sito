@@ -31,7 +31,7 @@ export default function MeIntro({ as: Heading = "h2", withLink = true }: { as?: 
             personal.
           </p>
           {withLink && (
-            <Link href="/my-story/" className="cta mt-7">Discover my story</Link>
+            <Link href="/about/" className="cta mt-7">Discover my story</Link>
           )}
         </div>
       </div>

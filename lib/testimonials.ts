@@ -1,6 +1,7 @@
 // Testimonianze.
-// FEATURED: quella in evidenza in home, tra "Coaching women to think clearly" e "The experience".
-// OTHERS: tutte le altre, nella sezione "What clients say" in fondo alla home.
+// FEATURED (Mirella): in nero subito dopo la prima schermata della home.
+// HIGHLIGHT (Luca Chiodaroli): in nero dopo la presentazione del programma.
+// OTHERS: nella sezione "What clients say" su fondo nero, in fondo alla home.
 export type Testimonial = { text: string[]; name: string; role: string };
 
 export const FEATURED: Testimonial = {
@@ -12,15 +13,16 @@ export const FEATURED: Testimonial = {
   role: "Account Director, Accent Communication",
 };
 
+export const HIGHLIGHT: Testimonial = {
+  text: [
+    "Working with Liz has been a truly positive and enriching experience. She is deeply empathetic and has a wonderful way of understanding exactly what you need in order to help you reach the goals you set for yourself. She always knows how to find the right key to motivate and guide you.",
+    "Our shared passion for music and cinema also made this journey of personal growth even more meaningful, creating a connection that enriched the whole experience. Last but not least, she is genuinely funny, so time with her is not only rewarding, but also enjoyable and fun.",
+  ],
+  name: "Luca Chiodaroli",
+  role: "Partner, PwC Italy \u00b7 AI & Digital Innovation",
+};
+
 export const OTHERS: Testimonial[] = [
-  {
-    text: [
-      "Working with Liz has been a truly positive and enriching experience. She is deeply empathetic and has a wonderful way of understanding exactly what you need in order to help you reach the goals you set for yourself. She always knows how to find the right key to motivate and guide you.",
-      "Our shared passion for music and cinema also made this journey of personal growth even more meaningful, creating a connection that enriched the whole experience. Last but not least, she is genuinely funny, so time with her is not only rewarding, but also enjoyable and fun.",
-    ],
-    name: "Luca Chiodaroli",
-    role: "Partner, PwC Italy \u00b7 AI & Digital Innovation",
-  },
   {
     text: [
       "Liz is an extremely skilled coach who knows how to bring out the best in her clients. I particularly appreciate her approach of establishing clear, shared objectives at the beginning of the journey, as well as her ability to put people at ease during sessions.",
