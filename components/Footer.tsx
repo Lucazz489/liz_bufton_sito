@@ -4,7 +4,7 @@ import { CTA, NAV, SITE } from "@/lib/site";
 // Footer scuro: chiude la pagina con nome, menu e contatti
 export default function Footer() {
   return (
-    <footer className="bg-fg pt-20 pb-[max(3rem,env(safe-area-inset-bottom))] text-page">
+    <footer className="border-t border-gold/30 bg-fg pt-20 pb-[max(3rem,env(safe-area-inset-bottom))] text-page">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:px-10">
         <div className="lg:col-span-5">
           <p className="font-serif text-[2rem] leading-none">{SITE.name}</p>

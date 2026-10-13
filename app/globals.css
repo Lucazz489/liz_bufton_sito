@@ -26,6 +26,7 @@
   --color-btn: var(--btn);
   --color-btn-fg: var(--btn-fg);
   --color-gold: var(--gold);
+  --color-sage: var(--sage);
   --color-rule: var(--rule);
 
   --font-serif: "Cormorant Garamond Variable", "Cormorant Garamond", Garamond, Georgia, serif;
@@ -34,40 +35,40 @@
 
 /* Palette definitiva: avorio, cipria e nero */
 :root {
-  /* Palette sobria: avorio, quasi nero, rosa usato solo come accento */
-  --page: #f7f3ef;
-  /* avorio */
-  --fg: #1c1718;
-  /* quasi nero */
-  --muted: #5f5557;
+  /* Palette "Rose & Sage" scelta da Liz: crema, espresso, rosa scuro, oro champagne, salvia */
+  --page: #f4eee9;
+  /* crema */
+  --fg: #302a2a;
+  /* espresso: testo e sezioni scure */
+  --muted: #6a6060;
   /* testo secondario */
-  --label: #9e5761;
-  /* rosa scuro: etichette, corsivi e accenti (leggibile sull'avorio) */
+  --label: #804557;
+  /* rosa scuro: etichette, bordi e pulsanti */
 
-  --alt: #efe5e0;
-  /* rosa tenue per le sezioni alternate */
-  --alt-fg: #1c1718;
-  --alt-muted: #574d4f;
-  --alt-label: #8f4f58;
+  --alt: #ebe1db;
+  /* crema rosata per le sezioni alternate */
+  --alt-fg: #302a2a;
+  --alt-muted: #625858;
+  --alt-label: #804557;
 
-  --band: #efe5e0;
-  /* fasce (pagine interne): rosa tenue con testo scuro */
-  --band-fg: #1c1718;
+  --band: #ebe1db;
+  --band-fg: #302a2a;
 
-  --head: #f7f3ef;
-  /* navbar: avorio come la pagina, testo scuro */
-  --head-fg: #1c1718;
+  --head: #f4eee9;
+  /* navbar crema con filo rosa scuro */
+  --head-fg: #302a2a;
 
-  --btn: #9e5761;
-  /* l'unico pulsante: rosa scuro con testo bianco */
+  --btn: #804557;
+  /* pulsante: rosa scuro con testo bianco */
   --btn-fg: #ffffff;
-  --btn-hover: #8a4b54;
+  --btn-hover: #6c3a49;
 
-  --gold: #9c7a3c;
-  /* oro antico: solo dettagli (virgolette, numeri) */
+  --gold: #c0a47e;
+  /* oro champagne: linee, numeri e testi sulle sezioni scure */
+  --sage: #a5b09a;
+  /* salvia: piccoli dettagli (icone) */
 
-  --rule: rgb(28 23 24 / 0.12);
-  /* linee sottili di separazione */
+  --rule: rgb(48 42 42 / 0.14);
 }
 
 /* Lo sfondo "esterno" ha il colore della navbar: tirando la pagina oltre il bordo

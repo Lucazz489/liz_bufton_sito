@@ -11,18 +11,18 @@ import { SITE } from "@/lib/site";
 
 // Colore della barra del browser su mobile, uguale alla navbar
 export const viewport: Viewport = {
-  themeColor: "#f7f3ef",
+  themeColor: "#f4eee9",
   viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Liz Bufton – Coaching for professional women",
+    default: "Liz Bufton – Women’s Leadership & Personal Development",
     template: "%s | Liz Bufton",
   },
   description:
-    "Coaching for professional women navigating progression, greater responsibility, change and new direction.",
+    "A six-week immersive development programme helping women navigate challenges, unlock their potential and create meaningful, sustainable growth in their professional and personal lives.",
   openGraph: {
     type: "website",
     siteName: SITE.name,

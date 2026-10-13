@@ -1,22 +1,31 @@
-/** Il problema che Liz risolve: titolo a sinistra, testo a destra, nessuna decorazione. */
+/** Breve presentazione del programma, centrata, con le due qualifiche di Liz. */
+export const CREDENTIALS = ["Neurolanguage Coach ICF accredited", "Corporate communication coach"];
+
+export function CredentialLine({ center = false }: { center?: boolean }) {
+  return (
+    <ul
+      className={`flex gap-x-6 gap-y-2 text-[0.78rem] font-semibold tracking-[0.18em] text-label uppercase ${center ? "flex-wrap justify-center" : "flex-col"}`}
+    >
+      {CREDENTIALS.map((c, i) => (
+        <li key={c} className="flex items-center gap-3">
+          {(i > 0 || !center) && <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />}
+          {c}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Intro() {
   return (
-    <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:py-36">
-      <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.4rem)] leading-[1.08] font-normal tracking-[-0.01em] text-balance lg:col-span-5">
-        Knowing you&rsquo;re ready for change and knowing how to create it are{" "}
-        <em className="text-label">two different things.</em>
-      </h2>
-      <div className="max-w-[36rem] space-y-6 text-[1.15rem] leading-[1.75] text-muted lg:col-span-6 lg:col-start-7 lg:pt-3">
-        <p>
-          You may be stepping into greater responsibility, finding your way in a role that asks something different of
-          you, or reconsidering your direction. You may want to communicate with greater confidence, establish stronger
-          boundaries or trust your own judgement more.
-        </p>
-        <p>Or you may simply recognise that something in the way you think, work or respond needs to change.</p>
-        <p className="pt-4 font-serif text-[1.7rem] leading-[1.3] text-fg">
-          You don&rsquo;t need to arrive with the answer. You need to know that something matters enough to work on.
-        </p>
-      </div>
+    <section className="mx-auto max-w-4xl px-6 py-24 text-center lg:py-32">
+      <p className="font-serif text-[clamp(1.55rem,2.5vw,2.1rem)] leading-[1.4] text-balance">
+        Designed for women at different stages of their personal and professional development, the programme offers a
+        combination of individual support, reflection and practical learning to help build on strengths and develop
+        their capabilities.
+      </p>
+      <span aria-hidden="true" className="mx-auto mt-10 mb-8 block h-px w-16 bg-gold" />
+      <CredentialLine center />
     </section>
   );
 }

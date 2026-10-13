@@ -1,33 +1,34 @@
 import HomeHero from "@/components/home/HomeHero";
-import Credentials from "@/components/home/Credentials";
+import FeaturedQuote from "@/components/home/FeaturedQuote";
 import Intro from "@/components/home/Intro";
 import JourneyArt from "@/components/home/JourneyArt";
 import ProgrammeOverview from "@/components/home/ProgrammeOverview";
-import JournalFeature from "@/components/home/JournalFeature";
-import FeaturedQuote from "@/components/home/FeaturedQuote";
+import { AboutTeaser, WhyWomen, WhyProgramme } from "@/components/home/AboutLiz";
+import { Testimonials, ClosingCta } from "@/components/home/ClientWords";
 import { HIGHLIGHT } from "@/lib/testimonials";
-import AboutLiz from "@/components/home/AboutLiz";
-import ClientWords from "@/components/home/ClientWords";
 
 /*
- * Home ridisegnata (ramo redesign-home): stile sobrio ed editoriale.
- * 1 prima schermata · 2 credenziali + testimonianza di Marco in nero · 3 il problema · 4 illustrazione del percorso
- * 5 il programma · 6 il journal · 7 testimonianza in evidenza · 8 chi e' Liz
- * 9 cosa dicono i clienti + invito finale
+ * Home secondo le note finali di Liz (ottobre):
+ * 1 prima schermata · 2 Mirella in nero · 3 presentazione + qualifiche · 4 Luca Chiodaroli in nero
+ * 5 acquerello · 6 il programma in sintesi · 7 A Little About Me · 8 Why women?
+ * 9 Why This Programme? · 10 testimonianze in nero · 11 invito finale
  */
 export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <Credentials />
-      <FeaturedQuote q={HIGHLIGHT} />
-      <Intro />
-      <JourneyArt />
-      <ProgrammeOverview />
-      <JournalFeature />
       <FeaturedQuote />
-      <AboutLiz />
-      <ClientWords />
+      <Intro />
+      <FeaturedQuote q={HIGHLIGHT} />
+      <div className="pt-16 lg:pt-24">
+        <JourneyArt />
+      </div>
+      <ProgrammeOverview />
+      <AboutTeaser />
+      <WhyWomen />
+      <WhyProgramme />
+      <Testimonials />
+      <ClosingCta />
     </>
   );
 }
