@@ -1,8 +1,7 @@
 export const SITE = {
   name: "Liz Bufton",
   tagline: "Women’s Leadership & Personal Development",
-  // TODO: sostituire con il dominio definitivo
-  url: "https://www.example.com",
+  url: "https://lizbufton.com",
   email: "liz.beth@live.co.uk",
   linkedin: "https://www.linkedin.com/",
 };
