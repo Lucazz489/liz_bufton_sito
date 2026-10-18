@@ -11,12 +11,20 @@ export const metadata: Metadata = {
 };
 
 const THEMES = [
-  { title: "Clarity", text: "Understanding her strengths, priorities and what she wants to achieve." },
-  { title: "Awareness", text: "Recognising the beliefs, habits and reactions influencing her choices." },
+  { title: "Clarity", text: "Recognising her strengths, understanding her priorities and identifying what she wants to achieve." },
+  { title: "Awareness", text: "Noticing the beliefs, habits and reactions that influence her choices and behaviour." },
   { title: "Change", text: "Questioning assumptions and exploring different ways of thinking and responding." },
   { title: "Action", text: "Taking practical steps towards her personal and professional goals." },
-  { title: "Momentum", text: "Learning from experience, working through setbacks and building useful habits." },
-  { title: "Celebration", text: "Recognising progress and preparing for continued development." },
+  { title: "Momentum", text: "Learning from experience, navigating setbacks and building habits that support progress." },
+  { title: "Celebration", text: "Recognising progress, acknowledging what she’s learned and planning what comes next." },
+];
+
+const TAKEAWAYS = [
+  { title: "Clarity and direction", text: "A better understanding of her strengths, priorities and what she wants to achieve." },
+  { title: "Greater self-awareness", text: "Insight into the thoughts, habits and reactions that influence her choices." },
+  { title: "Confidence to approach challenges differently", text: "New perspectives and practical approaches she can use at work." },
+  { title: "A personal development plan", text: "Clear steps to continue moving forward." },
+  { title: "Resources for continued development", text: "Her Reflective Journal and ongoing access to the Momentum Toolkit." },
 ];
 
 const TOOLKIT = [
@@ -102,25 +110,28 @@ const ELEMENTS: { name: string; sub: string; body: React.ReactNode }[] = [
 ];
 
 /*
- * Pagina "The Programme" (testi e mock-up di Liz):
- * 1. titolo + acquerello · 2. "Every woman's journey is different" con il journal
- * 3. What to Expect · 4. Six Themes · 5. Three Elements (fondo nero)
- * 6. How It All Comes Together · 7. Who Is the Programme For? · 8. A Practical Commitment · 9. invito finale
+ * Pagina "The Programme", nell'ordine indicato da Liz (email del 18 ottobre):
+ * 1. Explore the Programme + Every woman's journey is different · 2. Who Is the Programme For?
+ * 3. What Women Take Away · 4. Three Elements (fondo nero) · 5. How It All Comes Together
+ * 6. Your Six Weeks of One-to-One Coaching · 7. Beyond the Six Weeks · 8. invito finale
  */
 export default function ProgrammePage() {
   return (
     <>
-      {/* 1 */}
+      {/* 1. Explore the Programme */}
       <section className="mx-auto max-w-5xl px-6 pt-20 pb-10 text-center lg:pt-28">
         <Eyebrow tone="gold">Explore the Programme</Eyebrow>
         <h1 className="mt-6 font-serif text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[1.1] font-normal tracking-[-0.01em] text-balance">
           Empowering women to recognise their strengths, overcome barriers and move forward with{" "}
           <em className="text-label">greater confidence and purpose.</em>
         </h1>
+        <p className="mx-auto mt-6 max-w-[46ch] font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-[1.4] text-muted italic">
+          Six weeks of personal and professional development. More than coaching alone.
+        </p>
       </section>
       <JourneyArt caption={null} />
 
-      {/* 2 */}
+      {/* 1b. Every woman’s journey is different (con il journal) */}
       <SplitPanel
         reverse
         media={
@@ -152,59 +163,56 @@ export default function ProgrammePage() {
         </Prose>
       </SplitPanel>
 
-      {/* 3 */}
+      {/* 2. Who Is the Programme For? */}
       <section className="bg-alt text-alt-fg">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:py-28">
           <div className="lg:col-span-5">
-            <Heading>What to Expect Over Six Weeks</Heading>
-            <p className="mt-8 font-serif text-[1.5rem] leading-[1.35]">
-              Six private, 60-minute coaching sessions. <span className="text-label">One each week.</span>
+            <Heading>Who Is the Programme For?</Heading>
+            <p className="mt-8 font-serif text-[1.45rem] leading-[1.4]">
+              The programme is designed for professional women who want to develop their confidence, self-awareness and
+              leadership skills.
             </p>
           </div>
           <Prose className="max-w-[36rem] lg:col-span-6 lg:col-start-7 lg:pt-6">
             <p>
-              We begin with the individual. What matters to her? What does she want to achieve? What challenges is she
-              facing, and where would she like to grow?
+              It can support women preparing for greater responsibility, growing in their current roles, navigating
+              change or considering the next stage of their careers.
             </p>
             <p>
-              From there, coaching follows her needs. One week she might be preparing for an important conversation.
-              Another, she might be exploring a decision, recognising an unhelpful habit or considering her next career
-              step.
+              For organisations, it offers an opportunity to invest in women as individuals, while supporting the
+              development of skills that matter across the workplace: communication, decision-making, professional
+              relationships and taking initiative.
             </p>
             <p>
-              Between sessions, she uses her Reflective Journal and Momentum Toolkit to explore what she&rsquo;s
-              learning and try different approaches in everyday situations.
-            </p>
-            <p>
-              Each week brings an opportunity to return to coaching, discuss her experiences and decide what to work on
-              next.
+              The value lies in the personal approach. Rather than asking every participant to work through the same
+              challenges, the programme allows each woman to focus on the skills, behaviours and goals most relevant to
+              her role and ambitions.
             </p>
           </Prose>
         </div>
       </section>
 
-      {/* 4 */}
+      {/* 3. What Women Take Away */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <Heading center>Six Themes That Guide the Journey</Heading>
-        <ol className="mt-16 grid gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {THEMES.map((t, i) => (
-            <li
-              key={t.title}
-              className="border-t border-rule pt-6 sm:px-5 xl:border-t-0 xl:border-l xl:pt-0 xl:first:border-l-0 xl:first:pl-0"
-            >
-              <span className="font-serif text-[2.6rem] leading-none text-gold lining-nums">0{i + 1}</span>
-              <h3 className="mt-3 font-serif text-[1.6rem] leading-tight">{t.title}</h3>
-              <p className="mt-3 text-[0.98rem] leading-[1.65] text-muted">{t.text}</p>
+        <Heading center>What Women Take Away</Heading>
+        <p className="mx-auto mt-8 max-w-[52ch] text-center text-[1.1rem] leading-[1.75] text-muted">
+          Every woman&rsquo;s experience is different, but the programme is designed to help her develop:
+        </p>
+        <ul className="mt-16 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
+          {TAKEAWAYS.map((t) => (
+            <li key={t.title} className="border-t border-gold pt-6">
+              <svg viewBox="0 0 24 24" className="h-6 w-6 text-label" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M7.5 12.5l3 3 6-6.5" />
+              </svg>
+              <h3 className="mt-4 font-serif text-[1.45rem] leading-[1.2]">{t.title}</h3>
+              <p className="mt-3 text-[1rem] leading-[1.65] text-muted">{t.text}</p>
             </li>
           ))}
-        </ol>
-        <p className="mx-auto mt-16 max-w-[60ch] text-center font-serif text-[1.3rem] leading-[1.45] italic">
-          These themes are connected, not a rigid weekly timetable. Every woman develops at her own pace, and coaching
-          responds to what matters to her at the time.
-        </p>
+        </ul>
       </section>
 
-      {/* 5 */}
+      {/* 4. Three Elements That Make the Experience */}
       <section className="bg-fg text-page">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="text-center">
@@ -226,7 +234,7 @@ export default function ProgrammePage() {
         </div>
       </section>
 
-      {/* 6 */}
+      {/* 5. How It All Comes Together — TODO: nuova foto in arrivo da Liz */}
       <SplitPanel
         media={
           <img
@@ -258,72 +266,58 @@ export default function ProgrammePage() {
             explore what she learned and what she&rsquo;d like to try next.
           </p>
         </Prose>
-        <div className="mt-8 border-l-2 border-label pl-6">
-          <p className="font-serif text-[1.3rem] leading-[1.45]">
-            Coaching helps her explore the challenge. Reflection helps her understand it. Practical learning gives her
-            approaches to experiment with.
-          </p>
-          <p className="mt-4 text-[1.05rem] leading-[1.7] text-muted">
-            Each element contributes something different, and together they support learning that can be applied at
-            work.
-          </p>
-        </div>
       </SplitPanel>
 
-      {/* 7 */}
+      {/* 6. Your Six Weeks of One-to-One Coaching */}
       <section className="bg-alt text-alt-fg">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:py-28">
-          <div className="lg:col-span-5">
-            <Heading>Who Is the Programme For?</Heading>
-            <p className="mt-8 font-serif text-[1.45rem] leading-[1.4]">
-              The programme is designed for professional women who want to develop their confidence, self-awareness and
-              leadership skills.
-            </p>
-          </div>
-          <Prose className="max-w-[36rem] lg:col-span-6 lg:col-start-7 lg:pt-6">
-            <p>
-              It can support women preparing for greater responsibility, growing in their current roles, navigating
-              change or considering the next stage of their careers.
-            </p>
-            <p>
-              For organisations, it offers an opportunity to invest in women as individuals, while supporting the
-              development of skills that matter across the workplace: communication, decision-making, professional
-              relationships and taking initiative.
-            </p>
-            <p>
-              The value lies in the personal approach. Rather than asking every participant to work through the same
-              challenges, the programme allows each woman to focus on the skills, behaviours and goals most relevant to
-              her role and ambitions.
-            </p>
-          </Prose>
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <Heading center>Your Six Weeks of One-to-One Coaching</Heading>
+          <p className="mx-auto mt-8 max-w-[56ch] text-center text-[1.1rem] leading-[1.75] text-alt-muted">
+            Every woman follows the same six-week coaching method, with each week focused on a different theme. The
+            structure is consistent, but the conversations are personal to her.
+          </p>
+          <ol className="mt-16 grid gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            {THEMES.map((t, i) => (
+              <li
+                key={t.title}
+                className="border-t border-rule pt-6 sm:px-5 xl:border-t-0 xl:border-l xl:pt-0 xl:first:border-l-0 xl:first:pl-0"
+              >
+                <p className="text-[0.95rem] font-semibold tracking-[0.18em] text-label uppercase lining-nums">Week {i + 1}</p>
+                <span className="mt-2 block font-serif text-[2.6rem] leading-none text-gold lining-nums">0{i + 1}</span>
+                <h3 className="mt-3 font-serif text-[1.6rem] leading-tight">{t.title}</h3>
+                <p className="mt-3 text-[0.98rem] leading-[1.65] text-alt-muted">{t.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* 8 */}
+      {/* 7. Beyond the Six Weeks */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <Heading center>A Practical Commitment</Heading>
+        <Heading center>Beyond the Six Weeks</Heading>
         <div className="mt-14 grid gap-10 text-center md:grid-cols-3">
           <div className="border-t border-gold pt-8">
+            <p className="text-[1.05rem] leading-[1.7] text-muted">
+              The final coaching session gives each woman an opportunity to recognise her progress and consider how she
+              wants to continue developing.
+            </p>
+          </div>
+          <div className="border-t border-gold pt-8">
             <p className="font-serif text-[1.5rem] leading-[1.3]">
-              Six private coaching sessions of 60 minutes over six weeks.
+              She finishes with a personal development plan, her Reflective Journal and continued access to the
+              Momentum Toolkit.
             </p>
           </div>
           <div className="border-t border-gold pt-8">
             <p className="text-[1.05rem] leading-[1.7] text-muted">
-              Between sessions, participants use their journal and toolkit at their own pace, fitting reflection and
-              learning around their working lives. There are no additional group classes.
-            </p>
-          </div>
-          <div className="border-t border-gold pt-8">
-            <p className="text-[1.05rem] leading-[1.7] text-muted">
-              Both resources remain available after the programme, helping women continue learning from their
-              experiences and building on what they&rsquo;ve developed.
+              The coaching lasts six weeks, but the reflection, learning and practical resources remain available to
+              support her beyond the programme.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 9 */}
+      {/* 8. Give Women the Opportunity to Grow */}
       <section className="bg-fg text-page">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
           <h2 className="font-serif text-[clamp(2.4rem,4.4vw,3.8rem)] leading-[1.05] font-normal tracking-[-0.01em]">
@@ -331,10 +325,11 @@ export default function ProgrammePage() {
           </h2>
           <span aria-hidden="true" className="mx-auto mt-7 block h-px w-16 bg-gold" />
           <p className="mx-auto mt-7 max-w-[46ch] text-[1.15rem] leading-[1.7] text-page/75">
-            Whether you&rsquo;re exploring development for yourself or for women in your organisation, I&rsquo;d be
-            pleased to discuss how the programme could support your goals.
+            If you&rsquo;re considering development opportunities for women within your organisation, I&rsquo;d be
+            happy to hear what you&rsquo;re looking for and discuss whether the programme could be right for your
+            people.
           </p>
-          <Link href={CTA.href} className="cta mt-10">Book a discovery call</Link>
+          <Link href={CTA.href} className="cta mt-10">Book a Discovery Call</Link>
         </div>
       </section>
     </>
