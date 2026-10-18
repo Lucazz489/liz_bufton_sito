@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Women’s Leadership & Personal Development",
   // TODO: sostituire con il dominio definitivo
   url: "https://www.example.com",
-  email: "hello@example.com",
+  email: "liz.beth@live.co.uk",
   linkedin: "https://www.linkedin.com/",
 };
 
@@ -11,7 +11,8 @@ export const SITE = {
 export const NAV = [
   { href: "/", label: "Home" },
   { href: "/programme/", label: "The Programme" },
-  { href: "/workshops/", label: "Workshops" },
+  // Workshops: nascosta in questa versione (la pagina esiste ma non e' nel menu)
+  // { href: "/workshops/", label: "Workshops" },
   { href: "/about/", label: "About" },
 ] as const;
 

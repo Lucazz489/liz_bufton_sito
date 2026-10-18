@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Workshops",
   description: "Workshops for professional women by Liz Bufton.",
+  // nascosta in questa versione: fuori dal menu e non indicizzata
+  robots: { index: false, follow: false },
 };
 
 // Pagina da costruire: i contenuti arriveranno da Liz
