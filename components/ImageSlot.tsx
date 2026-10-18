@@ -1,6 +1,6 @@
 /**
  * Spazio per un'immagine. Finche' `src` non e' indicato mostra un segnaposto
- * con la descrizione della foto che serve; quando la foto arriva basta
+ * grigio (la descrizione della foto che serve resta solo nel codice, in `hint`); quando la foto arriva basta
  * salvarla in public/images/ e passare src="/images/nome-file.jpg".
  */
 export default function ImageSlot({
@@ -19,13 +19,6 @@ export default function ImageSlot({
   if (src) {
     return <img src={src} alt={alt} className={`object-cover ${grayscale ? "grayscale" : ""} ${className}`} />;
   }
-  return (
-    <div
-      role="img"
-      aria-label={alt}
-      className={`grid place-items-center bg-[repeating-linear-gradient(135deg,color-mix(in_srgb,var(--fg)_6%,transparent)_0_14px,transparent_14px_28px)] bg-alt p-6 text-center text-sm text-alt-muted ${className}`}
-    >
-      <span className="max-w-[28ch]">{hint}</span>
-    </div>
-  );
+  // Foto non ancora arrivata: solo un riquadro grigio, senza testo
+  return <div role="img" aria-label={alt} className={`bg-[color-mix(in_srgb,var(--fg)_9%,var(--page))] ${className}`} />;
 }
