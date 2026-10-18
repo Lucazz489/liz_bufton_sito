@@ -5,7 +5,8 @@ import { useState } from "react";
 import { SITE } from "@/lib/site";
 
 // Invio tramite Web3Forms: nessun backend, le richieste arrivano via email a Liz.
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+// La chiave e' pubblica per natura (finisce comunque nel codice della pagina).
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "4ccf801a-d56e-47e6-befd-fadc777808ba";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -27,7 +28,7 @@ export default function BookingForm() {
         body: JSON.stringify({
           ...data,
           access_key: ACCESS_KEY,
-          subject: "New complimentary call request",
+          subject: "New call request from your website",
           from_name: "Liz Bufton website",
         }),
       });
