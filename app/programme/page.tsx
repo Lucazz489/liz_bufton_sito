@@ -303,7 +303,7 @@ export default function ProgrammePage() {
             </p>
           </div>
           <div className="border-t border-gold pt-8">
-            <p className="font-serif text-[1.5rem] leading-[1.3]">
+            <p className="text-[1.05rem] leading-[1.7] text-muted">
               She finishes with a personal development plan, her Reflective Journal and continued access to the
               Momentum Toolkit.
             </p>

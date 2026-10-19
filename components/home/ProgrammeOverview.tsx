@@ -26,12 +26,17 @@ export const ELEMENTS = [
 export default function ProgrammeOverview() {
   return (
     <section className="bg-alt text-alt-fg">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 pt-24 lg:px-10 lg:pt-32">
+        <h2 className="text-center font-serif text-[clamp(2.6rem,4.6vw,4rem)] leading-[1.05] font-medium tracking-[-0.01em]">
+          The Programme
+        </h2>
+        <span aria-hidden="true" className="mx-auto mt-6 block h-px w-20 bg-gold" />
+      </div>
+      <div className="mx-auto grid max-w-7xl gap-14 px-6 pt-16 pb-24 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:pt-20 lg:pb-32">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-alt-label">The Programme</p>
-          <h2 className="mt-5 font-serif text-[clamp(2.1rem,3.6vw,3.1rem)] leading-[1.08] font-normal tracking-[-0.01em] text-balance">
+          <h3 className="font-serif text-[clamp(2rem,3.2vw,2.8rem)] leading-[1.08] font-normal tracking-[-0.01em] text-balance">
             More Than Coaching. <em className="text-alt-label">A Complete Development Experience.</em>
-          </h2>
+          </h3>
           <span aria-hidden="true" className="mt-6 block h-px w-16 bg-gold" />
           <p className="mt-7 font-serif text-[1.35rem] leading-[1.35]">
             Six weeks. Three interconnected elements. One purposeful journey.

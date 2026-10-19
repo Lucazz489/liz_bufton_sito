@@ -1,14 +1,15 @@
 /** Breve presentazione del programma, centrata, con le due qualifiche di Liz. */
-export const CREDENTIALS = ["Neurolanguage Coach ICF accredited", "Corporate communication coach"];
+export const CREDENTIALS = ["Neurolanguage Coach – ICF Accredited", "Corporate Communication Coach"];
 
+/** Le qualifiche di Liz, in serif ben leggibile, ognuna con un pallino oro. */
 export function CredentialLine({ center = false }: { center?: boolean }) {
   return (
     <ul
-      className={`flex gap-x-6 gap-y-2 text-[0.78rem] font-semibold tracking-[0.18em] text-label uppercase ${center ? "flex-wrap justify-center" : "flex-col"}`}
+      className={`flex gap-x-10 gap-y-3 font-serif text-[clamp(1.2rem,1.7vw,1.45rem)] leading-tight text-fg ${center ? "flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center" : "flex-col"}`}
     >
-      {CREDENTIALS.map((c, i) => (
+      {CREDENTIALS.map((c) => (
         <li key={c} className="flex items-center gap-3">
-          {(i > 0 || !center) && <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />}
+          <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-gold" />
           {c}
         </li>
       ))}

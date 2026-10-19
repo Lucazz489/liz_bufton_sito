@@ -7,7 +7,7 @@ import { ClosingCta } from "@/components/home/ClientWords";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Liz Bufton: more than 12 years of teaching, training and coaching professionals across Europe, Certified Neurolanguage Coach® (ICF-accredited training) and the beliefs behind her work with women.",
+    "Liz Bufton: Certified Neurolanguage Coach®, Corporate Communication Coach and over 12 years of teaching, training and coaching professionals across Europe.",
 };
 
 /* Icone semplici a linea per "What I Believe" (dentro cerchi colorati) */
@@ -35,9 +35,9 @@ const BELIEFS: {
     icon: "step",
     circle: "bg-label text-page",
     text: [
-      "I firmly believe that if we want something in our lives to change, we must be willing to change something ourselves.",
-      "That may mean making a difficult decision, challenging a long-held belief, breaking a familiar pattern or taking a step we’ve been avoiding.",
-      "We can’t always control what happens around us, but we can examine how we respond and recognise where we have the power to make a different choice.",
+      "I believe that if we want something in our lives to change, we have to be willing to do something differently ourselves.",
+      "Sometimes that means having a conversation we’ve been avoiding, making a decision we’ve put off or questioning an assumption we’ve held for a long time.",
+      "We can’t control everything that happens around us. But we can look at how we’re responding and consider what is within our control.",
     ],
     close: "Awareness matters. But change requires action.",
   },
@@ -46,10 +46,10 @@ const BELIEFS: {
     icon: "words",
     circle: "bg-sage text-fg",
     text: [
-      "I’m fascinated by the power of words — particularly the language we use when we speak to ourselves.",
-      "The stories we repeat can shape our confidence, influence our decisions and affect what we believe we’re capable of.",
-      "I’m also interested in how our physiology, emotions and behaviour interact, and how greater awareness of these connections can help us respond differently.",
-      "For me, recognising a pattern is often the beginning of being able to change it.",
+      "My background in communication has made me particularly attentive to the language people use, including the things they say to themselves.",
+      "A thought such as “I’m not ready” or “I don’t want to get this wrong” might seem insignificant, but when it becomes familiar, it can affect how someone approaches a situation.",
+      "I’m also interested in the connection between our emotions, physical responses and behaviour. Under pressure, we don’t always respond as we’d like to, even when we know what we want to say or do.",
+      "I think there’s value in understanding these reactions, rather than simply expecting ourselves to behave differently next time.",
     ],
   },
   {
@@ -57,23 +57,20 @@ const BELIEFS: {
     icon: "listen",
     circle: "bg-gold text-fg",
     text: [
-      "I believe we all need space to step away from the demands of everyday life and reflect.",
-      "And I believe there’s real value in having someone who listens carefully, with compassion and without judgement.",
-      "Someone who notices what we might overlook, asks thoughtful questions and is willing to challenge us honestly.",
-      "Because being supported doesn’t mean being agreed with.",
+      "Most people spend a great deal of time dealing with what’s expected of them. There isn’t always much opportunity to stop and consider what they need, what they’re finding difficult or what they’d like to change.",
+      "I believe having that time matters.",
+      "In coaching, I want people to feel they can speak openly, without having to present a polished version of themselves. I listen carefully, but I’ll also ask questions that may be uncomfortable or challenge an assumption if I think it’s worth exploring.",
     ],
-    close:
-      "Sometimes the most valuable conversation is the one that helps us see something we haven’t been willing or able to see before.",
+    close: "Because being supported doesn’t mean being agreed with.",
   },
   {
     title: "Always Learning. Always Evolving.",
     icon: "grow",
     circle: "bg-fg text-gold",
     text: [
-      "My own development remains an important part of my life and work.",
-      "I’ve had opportunities to learn from experienced coaches and mentors, and I continue to seek out professional development, events and new perspectives that challenge my thinking.",
-      "I believe that if we want to encourage growth in others, we must remain open to growth ourselves.",
-      "There is always more to learn, more to question and more to understand.",
+      "I continue to invest in my own development through professional training, learning from experienced coaches and mentors, and exploring new ideas in communication and human behaviour.",
+      "I also learn from the people I work with. Different experiences and perspectives regularly make me reconsider my own assumptions.",
+      "I think that’s important. I wouldn’t want to encourage someone else to question their thinking if I weren’t prepared to question mine.",
     ],
   },
 ];
@@ -104,31 +101,49 @@ export default function AboutPage() {
           />
         }
       >
-        <Eyebrow>A Little About Me</Eyebrow>
+        <Eyebrow>About Liz</Eyebrow>
+        <p className="mt-3 text-[0.95rem] leading-[1.7] text-muted lining-nums">
+          <span className="whitespace-nowrap">Certified Neurolanguage Coach&reg;</span>
+          <span className="mx-2 text-gold">|</span>
+          <span className="whitespace-nowrap">Corporate Communication Coach</span>
+          <span className="mx-2 text-gold">|</span>
+          <span className="whitespace-nowrap">Over 12 Years&rsquo; Experience</span>
+        </p>
         <Heading as="h1" className="text-[clamp(2.6rem,4.6vw,4rem)]">
           The Person Behind the Work
         </Heading>
         <p className="mt-8 font-serif text-[1.45rem] leading-[1.4]">
-          I&rsquo;ve long been fascinated by the stories we tell ourselves &mdash; the beliefs we develop about who we
-          are, what we&rsquo;re capable of and what&rsquo;s possible for us.
+          I&rsquo;ve become increasingly interested in how our experiences shape the way we see ourselves, the beliefs
+          we develop and the choices we make, often without realising just how much they influence us.
         </p>
         <Prose className="mt-6">
           <p>
-            My own experiences of change, uncertainty and personal development have made me increasingly aware of how
-            powerful those stories can be.
+            Some of that understanding comes from my own life. I&rsquo;ve experienced change, disappointment and
+            unexpected turns, as most of us have. They&rsquo;ve given me reasons to question my own thinking, reconsider
+            what matters to me and become more aware of how I respond to things.
           </p>
           <p>
-            I&rsquo;ve learned the importance of questioning my own assumptions, recognising when familiar ways of
-            thinking no longer serve me and being willing to approach things differently.
+            But much of my perspective has also developed through my work. Over the years, I&rsquo;ve had conversations
+            with professionals who are knowledgeable, capable and successful in their roles, yet still find certain
+            situations difficult to navigate. I&rsquo;ve seen how much can sit behind a person&rsquo;s confidence,
+            communication and behaviour, and how important it is not to make assumptions about someone simply because
+            of their position or experience.
           </p>
           <p>
-            I also know the value of having someone who listens with compassion, offers an honest perspective and
-            challenges us to see beyond our usual thinking.
+            That&rsquo;s something I carry into my coaching. I don&rsquo;t approach people with a ready-made idea of
+            what they need to change. I want to understand how they see a situation, what may be influencing their
+            response and what they would like to do differently.
           </p>
           <p>
-            These experiences have shaped both my commitment to my own development and the way I work with others.
+            I value warmth and honesty in equal measure. I want people to feel comfortable speaking openly with me, but
+            I also believe they deserve questions that make them think, perspectives they may not have considered and
+            support in turning those conversations into something useful.
           </p>
         </Prose>
+        <Emphasis className="mt-7 italic">
+          It&rsquo;s an approach shaped by my own experiences, strengthened by my professional training and developed
+          through years of working with people.
+        </Emphasis>
       </SplitPanel>
 
       {/* 2 */}
@@ -146,24 +161,27 @@ export default function AboutPage() {
         <Prose className="mt-8 lining-nums">
           <p>
             For more than 12 years, I&rsquo;ve worked in teaching, training and coaching with professionals across
-            Europe &mdash; from emerging leaders and managers to senior executives, business partners and CEOs.
+            Europe, from emerging leaders and managers to senior executives, business partners and CEOs.
           </p>
           <p>
-            Working with people in different roles and organisational environments has given me insight into the
-            demands of professional life, the importance of communication and the influence of confidence, expectations
-            and established habits.
+            Much of my work has centred on communication: helping people express themselves more clearly, handle
+            difficult conversations, work with colleagues and navigate the expectations that come with their roles.
           </p>
           <p>
-            Over the years, my interest has increasingly focused on what lies beneath the surface: the thinking behind
-            our decisions, the language that shapes our interactions and the patterns that influence how we respond to
-            challenges.
+            Working with people at different levels has shown me that professional experience doesn&rsquo;t always
+            translate into confidence in every situation. Someone can be very capable at their job and still hesitate to
+            contribute in a meeting, struggle with a particular relationship or find it difficult to manage competing
+            expectations.
           </p>
           <p>
-            What I value most is witnessing those moments when someone recognises something they hadn&rsquo;t seen
-            before, questions an assumption or begins to approach a situation differently.
+            These are situations I&rsquo;ve come across throughout my career, and they&rsquo;ve influenced my interest
+            in what affects the way people communicate and respond under pressure.
           </p>
         </Prose>
-        <Emphasis className="mt-7 italic">Those moments continue to make my work meaningful.</Emphasis>
+        <Emphasis className="mt-7 italic">
+          What I enjoy most is seeing someone make a connection they hadn&rsquo;t made before, try a different approach
+          and come back with their own observations about what happened.
+        </Emphasis>
       </SplitPanel>
 
       {/* 3 */}
@@ -225,24 +243,30 @@ export default function AboutPage() {
             Coaching Federation (ICF).
           </p>
           <p>
-            My development in Neurolanguage Coaching&reg; brought together areas that continue to interest me: coaching,
-            neuroscience, emotional intelligence and the ways people learn and change.
+            Neurolanguage Coaching&reg; brought together several areas that interest me: communication, neuroscience,
+            emotional intelligence and the way people learn.
           </p>
           <p>
-            It has deepened my appreciation of the relationship between language, thinking, emotions and behaviour.
+            It has influenced how I approach coaching, particularly my attention to language, the way people interpret
+            situations and the relationship between thinking, emotions and behaviour.
           </p>
           <p>
-            These interests inform how I work: listening carefully, recognising patterns, asking questions that
-            encourage reflection and helping people connect new understanding with practical action.
+            Combined with my experience in corporate communication training, it helps me explore challenges with people
+            in a way that is personal to them, while keeping sight of what they want to achieve.
           </p>
         </Prose>
         <p className="mt-7 font-semibold text-fg">
-          Because insight matters. But what we do with that insight matters too.
+          I want the conversations we have to be useful beyond the coaching session, whether that means approaching a
+          difficult conversation differently, making a decision or trying something they previously hesitated to do.
         </p>
       </SplitPanel>
 
       {/* 6 */}
-      <ClosingCta />
+      <ClosingCta
+        title="Let’s Talk"
+        text="If you’re considering development opportunities for women in your organisation, I’d be happy to hear what you’re looking for and discuss whether my six-week programme could be right for your people."
+        button="Book a Discovery Call"
+      />
     </>
   );
 }
