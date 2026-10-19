@@ -35,20 +35,25 @@ export function Testimonials({ items = OTHERS }: { items?: Testimonial[] }) {
   );
 }
 
-/** Invito finale */
-export function ClosingCta() {
+/** Invito finale (testi di default: quelli della home) */
+export function ClosingCta({
+  title = "You don’t need to have it all figured out.",
+  text = "A conversation is a good place to start. Book a free, no-obligation call to talk about where you are now and where you want to go next.",
+  button = CTA.label,
+}: {
+  title?: string;
+  text?: string;
+  button?: string;
+}) {
   return (
     <section className="bg-alt text-alt-fg">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
         <h2 className="font-serif text-[clamp(2.4rem,4.4vw,3.8rem)] leading-[1.05] font-normal tracking-[-0.01em]">
-          You don&rsquo;t need to have it all figured out.
+          {title}
         </h2>
         <span aria-hidden="true" className="mx-auto mt-7 block h-px w-16 bg-gold" />
-        <p className="mx-auto mt-7 max-w-[42ch] text-[1.15rem] leading-[1.7] text-alt-muted">
-          A conversation is a good place to start. Book a free, no-obligation call to talk about where you are now and
-          where you want to go next.
-        </p>
-        <Link href={CTA.href} className="cta mt-10">{CTA.label}</Link>
+        <p className="mx-auto mt-7 max-w-[48ch] text-[1.15rem] leading-[1.7] text-alt-muted">{text}</p>
+        <Link href={CTA.href} className="cta mt-10">{button}</Link>
       </div>
     </section>
   );
