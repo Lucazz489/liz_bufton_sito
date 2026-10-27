@@ -20,14 +20,14 @@ export function CredentialLine({ center = false }: { center?: boolean }) {
 }
 
 const FAMILIAR = [
-  "Stepping into a new role or taking on greater responsibility",
-  "Navigating career transitions and new opportunities",
-  "Building confidence and overcoming self-doubt",
-  "Managing workplace pressures, stress and competing priorities",
-  "Strengthening communication, influence and leadership presence",
-  "Developing the confidence to lead, mentor and support others",
-  "Seeking greater clarity, direction and purpose",
-  "Investing in personal growth and professional development",
+  "I’ve just stepped into a bigger role, and I’m not sure I have it all figured out.",
+  "I’m at a crossroads in my career and I don’t know what’s next.",
+  "I look confident, but I doubt myself more than anyone knows.",
+  "I’m juggling too much, and the pressure is wearing me down.",
+  "I want to speak up, be heard, and have real influence.",
+  "I want to lead, mentor and support others without losing myself.",
+  "I need clarity on where I’m heading and why.",
+  "I’m ready to invest in myself.",
 ];
 
 export default function Intro() {
@@ -35,9 +35,8 @@ export default function Intro() {
     <section className="mx-auto max-w-5xl px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-4xl text-center">
         <p className="font-serif text-[clamp(1.55rem,2.5vw,2.1rem)] leading-[1.4] text-balance">
-          Designed for women at different stages of their personal and professional development, the programme offers a
-          combination of individual support, reflection and practical learning to help build on strengths and develop
-          their capabilities.
+          For directors, senior managers and emerging leaders who are good at their job and want to lead with more
+          clarity and confidence.
         </p>
         <span aria-hidden="true" className="mx-auto mt-10 mb-8 block h-px w-16 bg-gold" />
         <CredentialLine center />

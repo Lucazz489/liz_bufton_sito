@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import JourneyArt from "@/components/home/JourneyArt";
 import { Eyebrow, Heading, Prose, SplitPanel } from "@/components/ui";
-import { CTA } from "@/lib/site";
+import TalkBlocks from "@/components/TalkBlocks";
 
 export const metadata: Metadata = {
   title: "The Programme",
   description:
-    "A six-week development programme for professional women: six private one-to-one coaching sessions, the Reflective Journal and the Momentum Toolkit.",
+    "A six-week immersive one-to-one coaching programme for women leaders: six one-hour sessions, a reflective journal and practical tools.",
 };
 
 const THEMES = [
@@ -113,7 +112,7 @@ const ELEMENTS: { name: string; sub: string; body: React.ReactNode }[] = [
  * Pagina "The Programme", nell'ordine indicato da Liz (email del 18 ottobre):
  * 1. Explore the Programme + Every woman's journey is different · 2. Who Is the Programme For?
  * 3. What Women Take Away · 4. Three Elements (fondo nero) · 5. How It All Comes Together
- * 6. Your Six Weeks of One-to-One Coaching · 7. Beyond the Six Weeks · 8. invito finale
+ * 6. Your Six Weeks of One-to-One Coaching · 7. Beyond the Six Weeks · 8. invito finale (persone e aziende)
  */
 export default function ProgrammePage() {
   return (
@@ -122,11 +121,17 @@ export default function ProgrammePage() {
       <section className="mx-auto max-w-5xl px-6 pt-20 pb-10 text-center lg:pt-28">
         <Eyebrow tone="gold">Explore the Programme</Eyebrow>
         <h1 className="mt-6 font-serif text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[1.1] font-normal tracking-[-0.01em] text-balance">
-          Empowering women to recognise their strengths, overcome barriers and move forward with{" "}
-          <em className="text-label">greater confidence and purpose.</em>
+          A six-week immersive one-to-one coaching programme <em className="text-label">for women leaders.</em>
         </h1>
-        <p className="mx-auto mt-6 max-w-[46ch] font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-[1.4] text-muted italic">
-          Six weeks of personal and professional development. More than coaching alone.
+        <p className="mx-auto mt-6 max-w-[50ch] font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-[1.4] text-muted italic">
+          Personal sessions, a guided journal and practical tools, so you know where you&rsquo;re going and how to get
+          there.
+        </p>
+        {/* Il lato pratico, ben visibile in alto */}
+        <p className="mx-auto mt-8 inline-flex items-center gap-3 border-y border-gold/60 px-2 py-3 text-[1rem] font-medium text-fg">
+          <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+          Six one-hour sessions, with a reflective journal delivered to you.
+          <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
         </p>
       </section>
       <JourneyArt caption={null} />
@@ -317,21 +322,8 @@ export default function ProgrammePage() {
         </div>
       </section>
 
-      {/* 8. Give Women the Opportunity to Grow */}
-      <section className="bg-fg text-page">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
-          <h2 className="font-serif text-[clamp(2.4rem,4.4vw,3.8rem)] leading-[1.05] font-normal tracking-[-0.01em]">
-            Give Women the Opportunity to Grow
-          </h2>
-          <span aria-hidden="true" className="mx-auto mt-7 block h-px w-16 bg-gold" />
-          <p className="mx-auto mt-7 max-w-[46ch] text-[1.15rem] leading-[1.7] text-page/75">
-            If you&rsquo;re considering development opportunities for women within your organisation, I&rsquo;d be
-            happy to hear what you&rsquo;re looking for and discuss whether the programme could be right for your
-            people.
-          </p>
-          <Link href={CTA.href} className="cta mt-10">Book a Discovery Call</Link>
-        </div>
-      </section>
+      {/* 8. Invito finale: persone e aziende */}
+      <TalkBlocks dark />
     </>
   );
 }

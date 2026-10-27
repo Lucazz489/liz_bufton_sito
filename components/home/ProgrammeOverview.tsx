@@ -9,17 +9,17 @@ export const ELEMENTS = [
   {
     name: "One-to-One Coaching",
     verb: "Explore",
-    text: "Six personalised coaching sessions to explore challenges, gain clarity, challenge limiting beliefs and identify practical steps towards professional and personal goals.",
+    text: "Six personal sessions to gain clarity and decide your next steps.",
   },
   {
     name: "The Reflective Journal",
     verb: "Reflect",
-    text: "A structured learning companion with guided exercises and reflection prompts to deepen self-awareness, capture insights and connect learning to everyday situations.",
+    text: "Guided questions and exercises to deepen self-awareness between sessions.",
   },
   {
     name: "The Momentum Toolkit",
     verb: "Apply",
-    text: "A curated collection of practical exercises, learning resources and development tools to reinforce each week’s theme and support continued growth beyond the programme.",
+    text: "Practical tools and resources to keep you moving forward.",
   },
 ];
 

@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <FeaturedQuote />
+      <FeaturedQuote intro="What clients say about working with me as a coach" />
       <Intro />
       <FeaturedQuote q={HIGHLIGHT} />
       <div className="pt-16 lg:pt-24">

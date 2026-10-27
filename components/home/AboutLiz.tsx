@@ -106,17 +106,10 @@ export function WhyProgramme() {
       }
     >
       <Eyebrow>Why This Programme?</Eyebrow>
-      <Heading>I&rsquo;ve always believed in the power of coaching and meaningful conversations.</Heading>
-      <Prose className="mt-8">
-        <p>
-          But I wanted to create a more connected development experience, bringing together personalised coaching,
-          structured reflection and practical learning.
-        </p>
-        <p className="font-serif text-[1.4rem] leading-[1.4] text-fg">
-          An experience that doesn&rsquo;t simply encourage new thinking but equips women with the knowledge and tools
-          to turn insight into action.
-        </p>
-      </Prose>
+      <Heading>Most coaching ends when the session does.</Heading>
+      <p className="mt-8 font-serif text-[1.45rem] leading-[1.4]">
+        This programme gives you a journal, a toolkit and weekly challenges, so the work continues between sessions.
+      </p>
       <Link href="/programme/" className="cta mt-10">Explore the Programme</Link>
     </SplitPanel>
   );
