@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Liz Bufton",
   tagline: "Women’s Leadership & Personal Development",
-  url: "https://lizbufton.com",
+  url: "https://herwayahead.co.uk",
   email: "liz.beth@live.co.uk",
   linkedin: "https://www.linkedin.com/",
 };
