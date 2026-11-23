@@ -101,10 +101,10 @@ export default function AboutPage() {
         className="bg-alt text-alt-fg"
         media={
           <ImageSlot
-            src="/images/liz-portrait.jpg"
+            src="/images/liz-portrait-2.jpg"
             alt="Liz Bufton"
-            hint="Ritratto di Liz"
-            className="aspect-[4/5] w-full max-w-md object-[60%_55%] lg:max-w-none"
+            hint="Ritratto di Liz (secondo)"
+            className="aspect-[4/5] w-full max-w-md object-[55%_50%] lg:max-w-none"
           />
         }
       >
