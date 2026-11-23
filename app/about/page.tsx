@@ -101,9 +101,10 @@ export default function AboutPage() {
         className="bg-alt text-alt-fg"
         media={
           <ImageSlot
-            alt="Liz Bufton at work"
-            hint="Foto di Liz al lavoro (formazione, coaching, un incontro) o immagine di un ambiente professionale"
-            className="aspect-[4/5] w-full max-w-md lg:max-w-none"
+            src="/images/liz-portrait.jpg"
+            alt="Liz Bufton"
+            hint="Ritratto di Liz"
+            className="aspect-[4/5] w-full max-w-md object-[60%_55%] lg:max-w-none"
           />
         }
       >
@@ -163,9 +164,10 @@ export default function AboutPage() {
         className="border-t border-rule"
         media={
           <ImageSlot
-            alt="A notebook and coffee on a desk"
-            hint="Immagine di studio/apprendimento (scrivania, libri, quaderno) o foto di Liz"
-            className="aspect-[4/5] w-full max-w-md lg:max-w-none"
+            src="/images/liz-mountains.jpg"
+            alt="Liz Bufton on a mountain path"
+            hint="Liz in montagna"
+            className="aspect-[4/5] w-full max-w-md object-[40%_center] lg:max-w-none"
           />
         }
       >

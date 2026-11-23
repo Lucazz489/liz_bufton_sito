@@ -7,11 +7,11 @@ export function AboutTeaser() {
   return (
     <SplitPanel
       media={
-        // TODO: foto di Liz in arrivo (verticale, almeno 1200px): salvarla in public/images/ e passare src
         <ImageSlot
+          src="/images/liz-portrait.jpg"
           alt="Liz Bufton"
-          hint="Foto di Liz (verticale, almeno 1200px)"
-          className="aspect-[4/5] w-full max-w-md lg:max-w-none"
+          hint="Ritratto di Liz"
+          className="aspect-[4/5] w-full max-w-md object-[60%_55%] lg:max-w-none"
         />
       }
     >
